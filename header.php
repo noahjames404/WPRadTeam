@@ -11,6 +11,7 @@
 
 <body id="page-top" <?php body_class(); ?>>
     <!-- Navigation -->
+    <input type='hidden' value='<?= is_front_page() ? "" : "navbar-scrolled" ?> ' id='wp_is_front_page'>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">

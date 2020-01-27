@@ -29,16 +29,24 @@ $(document).ready(function(){
 
   // Collapse Navbar
   var navbarCollapse = function() {
+    var isFrontPage = $("#wp_is_font_page").val();
+    // alert(isFrontPage);
+
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-scrolled");
-    } else {
+    } else if(isFrontPage != "1"){
       $("#mainNav").removeClass("navbar-scrolled");
     }
   };
   // Collapse now if page is not at top
   navbarCollapse();
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
+  if($("#wp_is_front_page").val().trim() != "navbar-scrolled"){
+    // Collapse the navbar when page is scrolled
+    $(window).scroll(navbarCollapse);
+  }else {
+    $("#mainNav").addClass("navbar-scrolled");
+  }
+
 
   // Magnific popup calls
   $('#portfolio').magnificPopup({
